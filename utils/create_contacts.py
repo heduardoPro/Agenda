@@ -21,9 +21,6 @@ if __name__ == '__main__':
 
     from contact.models import Category, Contact
 
-    Contact.objects.all().delete()
-    Category.objects.all().delete()
-
     fake = faker.Faker('pt_BR')
     categories = ['Amigos', 'Família', 'Conhecidos']
 
