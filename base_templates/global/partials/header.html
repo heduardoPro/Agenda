@@ -27,8 +27,8 @@
         </nav>
 
         <div class="search">
-            <form action="" method="get">
-                <input type="text" class="search-input" placeholder="search" id="search" name="q">
+            <form action="{% url 'contact:search' %}" method="GET">
+                <input type="search" class="search-input" placeholder="search" id="search" name="q">
             </form>
         </div>
 
