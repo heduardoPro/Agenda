@@ -3,13 +3,18 @@
 {% block content %}
     <div class="form-wrapper">
         <h2>Contact</h2>
-        <form action="" method="POST" enctype="multipart/form-data">
-            <div class="form-content">
-                <div class="form-group">
-                    <label for="id_first_name">Name</label>
-                    <input type="text" name="first_name" maxlength="255" id="id_first_name">
-                </div>
+        <form action="{% url 'contact:create' %}" method="POST" enctype="multipart/form-data">
 
+            {% csrf_token %}
+            <div class="form-content">
+                {% for field in form %}
+                
+                <div class="form-group">
+                    <label for="{{ field.id_for_labeç }}">{{field.label}}</label>
+                  {{ field }}
+                </div>
+                {% endfor %}
+                
                 <div class="form-content">
                     <div class="form-group">
                         <button class="btn" type="submit">Enviar</button>
